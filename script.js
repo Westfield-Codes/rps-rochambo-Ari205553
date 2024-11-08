@@ -1,30 +1,31 @@
+var choices = ["r" ,"p", "s"];
 main()
 function main(){
     let uChoice = 0; 
     let cChoice = 0;
-    if (uChoice == cChoice){
-       uchoice = userTurn();
+    while (uChoice == cChoice){
+       uChoice = userTurn();
        cChoice = cpuTurn(); 
-        alert(" We both chose" + uChoice);
-
+       if (uChoice == cChoice){
+        alert(" We both chose " + uChoice);
+       }
     }
-    else findWinner(uChoice, cChoice);
+    findWinner(uChoice, cChoice);
 }
 
 
 function userTurn(){
     let choice = prompt(" enter r,p, or s");
-    if (choice != "r" && choice != "p" && choice != "s"){
+    if (!choices.includes(choice)){
        alert("enter r,p, or s");
-       userTurn();
+     return  userTurn();
     }
     return choice;
 }
 function cpuTurn(){
-    let choice = Math.floor(Math.random()*2);
-    if (choice == 0) return "r";
-    else if (choice == 1) return "p";
-    else if (choice == 2) return "s";
+   let choice = Math.floor(Math.random()*2);
+    return choices[choice];
+   
 }
 
 //looks right, asked for help so should be correct//
@@ -41,6 +42,6 @@ function findWinner(uChoice, cChoice){
         else winner = "cpu";
     }
         if (cChoice == "r") winner = "player";
-            else winner ="cpu";
+            else winner ="cpu";   
         alert (" winner is " + winner);
 }
