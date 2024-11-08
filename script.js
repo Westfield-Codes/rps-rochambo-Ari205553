@@ -2,15 +2,15 @@ main()
 function main(){
     let uChoice = 0; 
     let cChoice = 0;
-    if (uChoice == cChoice){
-       uchoice = userTurn();
+    while (uChoice == cChoice){
+       uChoice = userTurn();
        cChoice = cpuTurn(); 
-        alert(" We both chose" + uChoice);
-
+       if (uChoice == cChoice){
+        alert(" We both chose " + uChoice);
+       }
     }
-    else findWinner(uChoice, cChoice);
+    findWinner(uChoice, cChoice);
 }
-
 
 function userTurn(){
     let choice = prompt(" enter r,p, or s");
