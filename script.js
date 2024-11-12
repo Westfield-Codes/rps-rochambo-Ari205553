@@ -1,4 +1,4 @@
-main()
+main();
 function main(){
     let uChoice = 0; 
     let cChoice = 0;
@@ -6,28 +6,30 @@ function main(){
        uChoice = userTurn();
        cChoice = cpuTurn(); 
        if (uChoice == cChoice){
-        alert(" We both chose " + uChoice);
+        alert(" We both picked " + cChoice);
        }
     }
     findWinner(uChoice, cChoice);
 }
 
+
 function userTurn(){
     let choice = prompt(" enter r,p, or s");
     if (choice != "r" && choice != "p" && choice != "s"){
        alert("enter r,p, or s");
-       userTurn();
+      return userTurn();
     }
-    return choice;
-}
-function cpuTurn(){
-    let choice = Math.floor(Math.random()*2);
-    if (choice == 0) return "r";
-    else if (choice == 1) return "p";
-    else if (choice == 2) return "s";
+   else return choice
 }
 
-//looks right, asked for help so should be correct//
+function cpuTurn(){
+  let choice = Math.floor(Math.random()*2);
+  if (choice == 0) return "r";
+  else if (choice == 1 )return "p";
+  else return "s";
+}
+
+
 
 function findWinner(uChoice, cChoice){
     alert(" finding winner ");
@@ -42,5 +44,5 @@ function findWinner(uChoice, cChoice){
     }
         if (cChoice == "r") winner = "player";
             else winner ="cpu";
-        alert (" winner is " + winner);
+        alert ("you chose "+uChoice+" and I chose "+cChoice+". "+winner+" won.");
 }
