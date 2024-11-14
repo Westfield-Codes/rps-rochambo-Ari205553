@@ -1,5 +1,6 @@
+
 var choices = ["r" ,"p", "s"];
-main()
+main();
 function main(){
     let uChoice = 0; 
     let cChoice = 0;
@@ -7,7 +8,9 @@ function main(){
        uChoice = userTurn();
        cChoice = cpuTurn(); 
        if (uChoice == cChoice){
+
         alert(" We both chose " + uChoice);
+
        }
     }
     findWinner(uChoice, cChoice);
@@ -18,20 +21,23 @@ function userTurn(){
     let choice = prompt(" enter r,p, or s");
     if (!choices.includes(choice)){
        alert("enter r,p, or s");
-     return  userTurn();
+
+      return userTurn();
     }
-    return choice;
+   else return choice
 }
+
 function cpuTurn(){
+
    let choice = Math.floor(Math.random()*2);
     return choices[choice];
-   
 }
 
 
 
 function findWinner(uChoice, cChoice){
     alert(" finding winner ");
+
     let winner = ""
     let winArray = [  ["r" , "p" , "I"], ["r", "s", "you"],  ["p", "s", "I"], ["p", "r", "You"],["s", "r", "I"], ["s", "p", "You"] ];
         alert ("you chose "+uChoice+" and I chose "+cChoice+". "+winner+" won.");
@@ -41,6 +47,6 @@ function findWinner(uChoice, cChoice){
                
             }
         }
-        return winner;
-        
-    }
+     
+        alert ("you chose "+uChoice+" and I chose "+cChoice+". "+winner+" won.");
+}
