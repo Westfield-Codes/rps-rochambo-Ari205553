@@ -28,20 +28,19 @@ function cpuTurn(){
    
 }
 
-//looks right, asked for help so should be correct//
+
 
 function findWinner(uChoice, cChoice){
     alert(" finding winner ");
-    let winner = "Undefined";
-    if (uChoice == "r" ){
-        if (cChoice =="s") winner = "player";
-        else winner = "cpu";
+    let winner = ""
+    let winArray = [  ["r" , "p" , "I"], ["r", "s", "you"],  ["p", "s", "I"], ["p", "r", "You"],["s", "r", "I"], ["s", "p", "You"] ];
+        alert ("you chose "+uChoice+" and I chose "+cChoice+". "+winner+" won.");
+        for (let i = 0;  i < winArray.length; i++){
+            if (winArray [i][0] == uChoice && winArray [i][1] == cChoice ){
+                winner = winArray[i][2];
+               
+            }
+        }
+        return winner;
+        
     }
-     if (uChoice == "s" ){
-        if (cChoice =="p") winner = "player";
-        else winner = "cpu";
-    }
-        if (cChoice == "r") winner = "player";
-            else winner ="cpu";   
-        alert (" winner is " + winner);
-}
