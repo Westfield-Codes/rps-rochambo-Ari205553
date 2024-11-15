@@ -16,6 +16,19 @@ function main(){
     findWinner(uChoice, cChoice);
 }
 
+function setRounds(){
+    let rounds = prompt(" How many rounds?");
+    if (rounds%2 == 0){
+        alert("Must be odd");
+    }
+    else return rounds ;
+    return setRounds();
+}
+
+function rpsRounds(){
+    let uChoice = 0;
+
+}
 
 function userTurn(){
     let choice = prompt(" enter r,p, or s");
