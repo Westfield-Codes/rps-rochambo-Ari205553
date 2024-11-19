@@ -35,12 +35,10 @@ function cpuTurn(){
 
 
 
-function findWinner(uChoice, cChoice){
-    alert(" finding winner ");
+function findWinner(uChoice, cChoice);
 
     let winner = ""
     let winArray = [  ["r" , "p" , "I"], ["r", "s", "you"],  ["p", "s", "I"], ["p", "r", "You"],["s", "r", "I"], ["s", "p", "You"] ];
-        alert ("you chose "+uChoice+" and I chose "+cChoice+". "+winner+" won.");
         for (let i = 0;  i < winArray.length; i++){
             if (winArray [i][0] == uChoice && winArray [i][1] == cChoice ){
                 winner = winArray[i][2];
